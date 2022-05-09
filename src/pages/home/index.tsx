@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import React, { useEffect } from "react";
-import { RootState } from "../store";
-import { getUserDataActionCreator } from "../store/user/action";
+import { RootState } from "../../store";
+import { getUserDataActionCreator } from "../../store/user/action";
 const mapDataToProps = (state: RootState)=>{
     return {
         loading: state.user.loading,
@@ -16,8 +16,6 @@ const mapDisptchToProps = (dispatch: any)=>{
             dispatch(getUserDataActionCreator())
         }
     }
-        
-    
 }
 
 type PropsType = ReturnType<typeof mapDataToProps> & ReturnType<typeof mapDisptchToProps>
